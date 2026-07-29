@@ -54,7 +54,22 @@ import taxlogo from '../assets/taxlogo.png'
 import { MdCopyright } from "react-icons/md";
 import contact91 from "../assets/contact91.jpg"
 import menu from "../assets/menu.png"
-
+import AirIndia from '../assets/AirIndia.png'
+import Airtel from '../assets/Airtel.png'
+import asian from '../assets/asian.jpg'
+import carrier from '../assets/carrier.png'
+import ICIC from '../assets/ICIC.png'
+import HDFC from '../assets/HDFC.png'
+import hp from '../assets/hp.png'
+import Kotak from '../assets/Kotak.png'
+import LIC from '../assets/LIC.png'
+import mahindra from '../assets/mahindra.png'
+import Samsung from '../assets/Samsung.jpg'
+import Sony from '../assets/Sony.png'
+import standardchartered from '../assets/standardchartered.png'
+import TheTimes from '../assets/TheTimes.png'
+import BBC from '../assets/BBC.jpg'
+import MotherDiary from '../assets/MotherDiary.jpg'
 
 function Header() {
   const imageprop = {
@@ -86,6 +101,24 @@ function Header() {
     transform: `translateX(${activeIndex * 100}%)`,
     width: 'calc((100% - 12px) / 3)',
   };
+  const companyLogos = [
+    { src: AirIndia, alt: 'Air India', width: '120px', height: '40px' },
+    { src: Airtel, alt: 'Airtel', width: '120px', height: '40px' },
+    { src: asian, alt: 'Asian Paints', width: '80px', height: '40px' },
+    { src: carrier, alt: 'Carrier', width: '80px', height: '40px' },
+    { src: ICIC, alt: 'ICIC Bank', width: '110px', height: '30px' },
+    { src: HDFC, alt: 'HDFC Bank', width: '150px', height: '30px' },
+    { src: hp, alt: 'HP', width: '120px', height: '40px' },
+    { src: Kotak, alt: 'Kotak', width: '120px', height: '40px' },
+    { src: LIC, alt: 'LIC', width: '120px', height: '40px' },
+    { src: mahindra, alt: 'Mahindra', width: '80px', height: '40px' },
+    { src: Samsung, alt: 'Samsung', width: '120px', height: '40px' },
+    { src: Sony, alt: 'Sony', width: '80px', height: '40px' },
+    { src: standardchartered, alt: 'Standard Chartered', width: '180px', height: '40px' },
+    { src: TheTimes, alt: 'The Times of India', width: '120px', height: '40px' },
+    { src: BBC, alt: 'BBC', width: '200px', height: '40px' },
+    { src: MotherDiary, alt: 'Mother Dairy', width: '80px', height: '40px' },
+  ];
 
   useEffect( () => {
     let index = 0;
@@ -204,32 +237,25 @@ function Header() {
       </div>
 
       <div className="w-full mt-5 h-10">
-        
         <div className="company-logos">
-          <img src="./src/assets/AirIndia.png" alt="image" style={{ width: '120px', height: '40px' }}/>
-          <img src="./src/assets/Airtel.png" alt="image" style={{ width: '120px', height: '40px' }}/>
-          <img src="./src/assets/asian.jpg" alt="image" style={{ width: '80px', height: '40px' }}/>
-          <img src="./src/assets/carrier.png" alt="image" style={{ width: '80px', height: '40px' }}/>
-          <img src="./src/assets/ICIC.png" alt="image" style={{ width: '110px', height: '30px' }}/>
-          <img src="./src/assets/HDFC.png" alt="image" style={{ width: '150px', height: '30px'}}/>
-          <img src="./src/assets/hp.png" alt="image" style={{ width: '120px', height: '40px' }}/>
-          <img src="./src/assets/Kotak.png" alt="image" style={{ width: '120px', height: '40px' }}/>
-          <img src="./src/assets/LIC.png" alt="image" style={{ width: '120px', height: '40px' }}/>
-          <img src="./src/assets/mahindra.png" alt="image" style={{ width: '80px', height: '40px' }}/>
-          <img src="./src/assets/Samsung.jpg" alt="image" style={{ width: '120px', height: '40px' }}/>
-          <img src="./src/assets/Sony.png" alt="image" style={{ width: '80px', height: '40px' }}/>
-          <img src="./src/assets/standardchartered.png" alt="image" style={{ width: '180px', height: '40px' }}/>
-          <img src="./src/assets/TheTimes.png" alt="image" style={{ width: '120px', height: '40px' }}/>
-          <img src="./src/assets/BBC.jpg" alt="image" style={{ width: '200px', height: '40px' }}/>
-          <img src="./src/assets/MotherDiary.jpg" alt="image" style={{ width: '80px', height: '40px' }}/>
-
-          <img src="./src/assets/AirIndia.png" alt="image" style={{ width: '130px', height: '40px' }}/>
-          <img src="./src/assets/Airtel.png" alt="image" style={{ width: '130px', height: '40px' }}/>
-          <img src="./src/assets/asian.jpg" alt="image" style={{ width: '80px', height: '40px' }}/>
-          <img src="./src/assets/carrier.png" alt="image" style={{ width: '80px', height: '40px' }}/>
-          <img src="./src/assets/ICIC.png" alt="image" style={{ width: '110px', height: '30px' }}/>
-          <img src="./src/assets/HDFC.png" alt="image" style={{ width: '150px', height: '30px' }}/>
-          <img src="./src/assets/hp.png" alt="image" style={{ width: '120px', height: '40px' }}/>
+          {companyLogos.map((logo, index) => (
+            <img
+              key={`${logo.alt}-${index}`}
+              src={logo.src}
+              alt={logo.alt}
+              loading="lazy"
+              style={{ width: logo.width, height: logo.height }}
+            />
+          ))}
+          {companyLogos.map((logo, index) => (
+            <img
+              key={`${logo.alt}-dup-${index}`}
+              src={logo.src}
+              alt={logo.alt}
+              loading="lazy"
+              style={{ width: logo.width, height: logo.height }}
+            />
+          ))}
         </div>
       </div>
 
