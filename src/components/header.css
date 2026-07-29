@@ -1,0 +1,354 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,237;1,237&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+
+
+html, body {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 237;
+  font-style: normal;
+  overflow-x: hidden;
+}
+
+.animate-marqee{
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    padding: 1px 0;
+    position: relative;
+}
+
+.marqee-content {
+    display: inline-flex;
+    gap: 50px;
+    animation: move 20s linear infinite;
+    padding: 0;
+    margin: 0;
+}
+
+.marqee-content p {
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+@keyframes move{
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.navbar-items > ul > li{
+    background: linear-gradient(25deg, #080071, rgb(0, 56, 225));
+    border-radius: 25px;
+    margin: 3px;
+    padding: 5px 16px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: 100;
+   
+  
+}
+
+.navbar-items > ul > li:hover{
+    color: white;
+
+}
+
+.navbar-items{
+    width: 54%;
+    position: relative;
+    margin: 5px;
+}
+
+
+.logo > img {
+    width: 160px;
+    height: 50px;
+    object-fit: cover;
+    overflow: hidden;
+}
+h1{
+    background: linear-gradient(to bottom, white, rgba(205, 205, 205, 1));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.5;
+    font-weight: 900;
+}
+
+.glowing-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-glow 2s infinite;
+  margin-right: 10px;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
+}
+.herobtn{
+      font-family: "Italianno", cursive;
+      font-style: normal;
+      font-weight: 100;
+      font-size: 25px;
+      background: linear-gradient(25deg, #2b5bfc, rgb(19, 78, 255));
+}
+.herobtn:hover{
+    background: linear-gradient(90deg, #1807ff, rgb(1, 26, 100));
+}
+.movingCards {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.movingCards::before,
+.movingCards::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 1rem;
+    height: 100%;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.movingCards::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(8, 0, 113, 1), rgba(17, 1, 245, 0));
+}
+
+.movingCards::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(8, 0, 113, 1), rgba(8, 0, 113, 0));
+}
+
+.movingCards > div {
+    animation: cards 10s linear infinite;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+@keyframes cards{
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.cardtext {
+  font-family: "Italianno", cursive;
+  font-style: normal;
+  position: relative;
+  top: 100px;
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  font-weight: 200;
+  letter-spacing: 0cm;
+}
+
+.trusted{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 200;
+  color: rgb(0, 56, 225);
+  font-size: large;
+  font-weight: bolder;
+}
+.servicetext{
+   font-family: "DM Sans", sans-serif;
+   font-weight: 200;
+   font-size: 14px;
+}
+.serviceheading{
+  font-family: "DM Sans", sans-serif;
+   font-weight: 200;
+   font-size: 14px;
+}
+.investors{
+
+   font-weight: bold;
+   font-size: 12px;
+
+}
+
+.service{
+  color:rgb(0, 36, 143);
+  font-family: "DM Sans", sans-serif; 
+  margin-bottom: 20px;
+  color:#0b00ac;
+  font-weight: 500;
+}
+.everywhere{
+    font-family: "Italianno", cursive;
+    font-style: normal;
+    color:#0b00ac;
+    font-size:larger;
+    font-weight: bold;
+}
+.serviceoptions {
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: inset 0 0 0 1px rgba(13, 91, 255, 0.2);
+}
+
+.service-slider {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  height: calc(100% - 12px);
+  border-radius: 999px;
+  transition: transform 0.35s ease, width 0.35s ease;
+  z-index: 0;
+}
+
+.service-option {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #0f4cff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-option:hover {
+  transform: translateY(-2px) scale(1.02);
+  color: white;
+}
+
+.service-option.active {
+  color: white;
+}
+
+.service-option:not(.active):hover {
+  background: rgba(15, 76, 255, 0.08);
+}
+.company{
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.company-logos {
+    display: flex;
+    gap: 40px;
+    animation: company 10s linear infinite;
+    margin: 0 auto;
+
+}
+
+@keyframes company{
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+  
+}
+
+/* Shining beam effect for cards */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card-shine:hover::before {
+  animation: shine 1s ease-in-out;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Blue shine for investors card */
+.investors-shine::before {
+  background: linear-gradient(90deg, transparent, rgba(81, 162, 255, 0.7), transparent);
+}
+
+/* Green shine for consumers card */
+.consumers-shine::before {
+  background: linear-gradient(90deg, transparent, rgba(64, 174, 57, 0.7), transparent);
+}
+
+/* Purple shine for business card */
+.business-shine::before {
+  background: linear-gradient(90deg, transparent, rgba(150, 100, 200, 0.7), transparent);
+}
+
+.abouttext{
+   font-family: "Space Grotesk", sans-serif; 
+   font-size: 50px; 
+   font-weight: 100;
+   letter-spacing: -0.07cm;
+   
+}
+.aboutdescription{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  margin-top: 20px;
+  gap: 5px;
+
+}
+.aboutdescription > li{
+  font-size: 0.9rem;
+  line-height: 0.5cm;
+}
+.card > span > br > p{
+  font-family:'Courier New', Courier, monospace;
+}
