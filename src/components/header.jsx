@@ -54,6 +54,7 @@ import taxlogo from '../assets/taxlogo.png'
 import { MdCopyright } from "react-icons/md";
 import contact91 from "../assets/contact91.jpg"
 import menu from "../assets/menu.png"
+import sendIcon from '../assets/send.png'
 import AirIndia from '../assets/AirIndia.png'
 import Airtel from '../assets/Airtel.png'
 import asian from '../assets/asian.jpg'
@@ -402,20 +403,20 @@ function Header() {
       <Testimonial />
     </section>
 
-    <section className="mt-20 " >
+    <section className="mt-20" >
       <div className="border flex flex-col md:flex-row absolute w-full h-[34rem] md:h-[20rem] bg-blue-800 gap-10" >
         <div className="relative w-[25rem] md:w-[30rem] ">
   
           <img className="relative bottom-35 md:bottom-15 left-8 md:left-18 z-40 " src={Mobile}/>
           <div className="relative w-15 ml-[18rem] md:ml-[24rem] mt-[-27rem] md:mt-[-25rem] z-100"><img src={coin}/></div>
-          <div className="relative w-25 ml-[17rem] md:ml-[26rem] mt-[3rem] md:mt-[2rem] z-100"><img src="../src/assets/send.png" className="w-30" /></div>
+          <div className="relative w-25 ml-[17rem] md:ml-[26rem] mt-[3rem] md:mt-[2rem] z-100"><img src={sendIcon} className="w-30" /></div>
           <div className="relative w-15 ml-[5rem] md:ml-[8rem] mt-2 md:mt-0  z-100"><img src={coin}/></div>
         </div>
        
         
         
-        <div  className=" text-white w-[100vw] md:w-full ml-0 mt-[-30px] md:ml-20 md:mt-10  p-2 md:p-0 ">
-          <p className="font-medium text-[23px] md:text-[34px]  mt-1 md:mt-0" style={{fontFamily: "Space Grotesk"}}>EbixCash - UPI, Wallet and Payments</p>
+        <div  className=" text-white w-[100vw] md:w-full ml-0 mt-[100px] md:mt-[-30px] md:ml-20 md:mt-10  p-2 md:p-0 ">
+          <p className="font-medium text-[23px] md:text-[34px] mt-[-120px] md:mt-0" style={{fontFamily: "Space Grotesk"}}>EbixCash - UPI, Wallet and Payments</p>
           <p className=" text-[13px] md:text-[14px] mt-2 text-white text-justify">One App. Every Essential. From instant payments and seamless money transfers to forex, gift cards, and travel bookings, EbixCash brings all your everyday financial services together in one secure, intelligent experience.</p>
           <ul className="mt-2 ">
             <li className="flex text-[13px]
@@ -445,7 +446,7 @@ function Header() {
 
         <div className="flex flex-col relative mt-10 md:mt-20 ml-2 md:ml-20">
           <div>
-            <p className="flex font-medium text-[50px] text-blue-700" style={{fontFamily: "Space Grotesk", letterSpacing: `-0.01cm` }}>Contact Us<img src="../src/assets/send.png" className="w-20 ml-1" /></p>
+            <p className="flex font-medium text-[50px] text-blue-700" style={{fontFamily: "Space Grotesk", letterSpacing: `-0.01cm` }}>Contact Us<img src={sendIcon} className="w-20 ml-1" /></p>
             <p className="text-[18px] text-bold">Write to us and we'll get back to you soon. Promise!</p>
           </div>
           
