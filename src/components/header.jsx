@@ -71,6 +71,8 @@ import standardchartered from '../assets/standardchartered.png'
 import TheTimes from '../assets/TheTimes.png'
 import BBC from '../assets/BBC.jpg'
 import MotherDiary from '../assets/MotherDiary.jpg'
+import app from '../assets/app.jpg'
+
 
 function Header() {
   const imageprop = {
@@ -165,7 +167,7 @@ function Header() {
       </div>
       
       <div className="w-full h-140 md:h-170 flex justify-center" style={imageprop}>
-        <div style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(8, 0, 113, 0.8)', zIndex: 1}}></div>
+        <div style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(8, 0, 113, 0.75)', zIndex: 1}}></div>
         <video autoPlay muted loop className="absolute top-0 left-0 w-full h-full object-cover" style={{zIndex: 0, opacity: 1}}>
           <source src={backgroundVideo} type="video/mp4" />
         </video>
@@ -210,7 +212,7 @@ function Header() {
           </p>
 
           <div className="flex gap-4 justify-center mt-6 md:mt-8 ">
-              <button className="tracking-wider border-b-2 border-white text-nowrap italic text-center rounded-4xl herobtn font-bold text-white  w-40 md:w-48">
+              <button className="tracking-wider border-b-2 border-white text-nowrap italic text-center rounded-4xl herobtn font-bold text-white w-40 md:w-48">
                 {btnitems}
               </button>
               <button className="tracking-wide text-nowrap text-center font-extrabold px-5 py-2 rounded-4xl bg-white outline-offset-8 outline-amber-800">Explore</button>
@@ -219,7 +221,7 @@ function Header() {
           <div>
           </div>
           
-          <div className="w-[24rem] md:w-full max-w-[1200px] h-[170px] rounded-2xl m-auto movingCards flex justify-center items-center gap-8 overflow-hidden mt-[-10px]" style={{zIndex: 10}}>
+          <div className="w-[24rem] md:w-full max-w-[1200px] h-[170px] rounded-2xl m-auto movingCards flex justify-center items-center gap-8 overflow-hidden mt-[-5px]" style={{zIndex: 10}}>
              <div className="bg-blue-700 rounded-2xl  w-40 h-22 md:h-25  gradient-border px-4 flex-shrink-0 bg-contain bg-no-repeat bg-center" style={{backgroundImage: `url(${business})`}}><span className='cardtext'>FinTech</span></div>
              <div className="bg-blue-700 rounded-2xl  w-40 h-22 md:h-25  gradient-border px-4 flex-shrink-0 bg-contain bg-no-repeat bg-center" style={{backgroundImage: `url(${elearning})`}}><span className='cardtext'>E-Learning</span></div>
              <div className="bg-blue-700 rounded-2xl  w-40 h-22 md:h-25  gradient-border px-4 flex-shrink-0 bg-contain bg-no-repeat bg-center" style={{backgroundImage: `url(${travel})`}}><span className='cardtext'>Travel</span></div>
@@ -404,21 +406,29 @@ function Header() {
     </section>
 
     <section className="mt-20" >
-      <div className="border flex flex-col md:flex-row absolute w-full h-[34rem] md:h-[20rem] bg-blue-800 gap-10" >
-        <div className="relative w-[25rem] md:w-[30rem] ">
+      <div className="border flex flex-col md:flex-row absolute w-full h-[34rem] md:h-[20rem] bg-blue-800 gap-10" style={{
+            backgroundImage: `linear-gradient(135deg, rgba(10, 34, 114, 0.3), rgba(30, 64, 175, 0.82)), url(${app})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundBlendMode: 'overlay',
+            minHeight: '20rem',
+            
+          }} >
+        <div className="relative w-[25rem] md:w-[70rem] ">
   
-          <img className="relative bottom-35 md:bottom-15 left-8 md:left-18 z-40 " src={Mobile}/>
-          <div className="relative w-15 ml-[18rem] md:ml-[24rem] mt-[-27rem] md:mt-[-25rem] z-100"><img src={coin}/></div>
+          <img className="relative bottom-35 md:bottom-20 left-8 md:left-18 z-40 " src={Mobile}/>
+          <div className="relative w-15 ml-[18rem] md:ml-[26rem] mt-[-27rem] md:mt-[-28rem] z-100"><img src={coin}/></div>
           <div className="relative w-25 ml-[17rem] md:ml-[26rem] mt-[3rem] md:mt-[2rem] z-100"><img src={sendIcon} className="w-30" /></div>
           <div className="relative w-15 ml-[5rem] md:ml-[8rem] mt-2 md:mt-0  z-100"><img src={coin}/></div>
         </div>
        
         
         
-        <div  className=" text-white w-[100vw] md:w-full ml-0 mt-[100px] md:mt-[-30px] md:ml-20 md:mt-10  p-2 md:p-0 ">
-          <p className="font-medium text-[23px] md:text-[34px] mt-[-120px] md:mt-0" style={{fontFamily: "Space Grotesk"}}>EbixCash - UPI, Wallet and Payments</p>
-          <p className=" text-[13px] md:text-[14px] mt-2 text-white text-justify">One App. Every Essential. From instant payments and seamless money transfers to forex, gift cards, and travel bookings, EbixCash brings all your everyday financial services together in one secure, intelligent experience.</p>
-          <ul className="mt-2 ">
+        <div  className=" text-white w-[100vw] md:w-full ml-0 mt-[100px] md:mt-[40px] md:ml-[-45px] md:mt-10  p-2 md:p-0 ">
+          <p className="font-normal text-[23px] md:text-[34px] mt-[-120px] md:mt-0" style={{fontFamily: "Space Grotesk"}}>EbixCash - UPI, Wallet and Payments</p>
+          <p className="text-[13px] md:text-[14px] mt-2 text-white text-justify">One App. Every Essential. From instant payments and seamless money transfers to forex, gift cards, and travel bookings, EbixCash brings all<br></br> your everyday financial services together in one secure, intelligent experience.</p>
+          <ul className="mt-2 " >
             <li className="flex text-[13px]
              mb-2" ><img src={icon} className="w-5 h-5 mr-1"/> Instant UPI Payments & Money Transfers</li>
             <li className="flex text-[13px] mb-2"><img src={icon} className="w-5 h-5 mr-1"/> Travel & Forex at Your Fingertips</li>
@@ -474,7 +484,6 @@ function Header() {
               
               
               </div>
-
 
               <div className='flex flex-col md:flex-row gap-5 '>
               <label>Phone<input
