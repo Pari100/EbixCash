@@ -49,43 +49,86 @@ html, body {
     }
 }
 
-.navbar-items > ul > li{
-    background: linear-gradient(25deg, #080071, rgb(0, 56, 225));
-    border-radius: 25px;
-    margin: 3px;
-    padding: 5px 16px;
-    font-family:Arial, Helvetica, sans-serif;
-    color: white;
-    font-weight: 100;
-   
-  
-}
-
-.navbar-items > ul > li:hover{
-    color: white;
-
-}
-
-.navbar-items{
-    width: 54%;
-    position: relative;
-    margin: 5px;
-}
 
 
-.logo > img {
-    width: 160px;
-    height: 50px;
-    object-fit: cover;
-    overflow: hidden;
-}
+
 h1{
-    background: linear-gradient(to bottom, white, rgba(205, 205, 205, 0.7));
+    background: linear-gradient(to bottom, white, rgb(241, 240, 240));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1.5;
     font-weight: 900;
+}
+
+@property --circle-one-x {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 20%;
+}
+
+@property --circle-one-y {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 20%;
+}
+
+@property --circle-two-x {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 80%;
+}
+
+@property --circle-two-y {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 80%;
+}
+
+.animated-blue-circles {
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.24) 0.7px, transparent 1px),
+    radial-gradient(circle at var(--circle-one-x) var(--circle-one-y), rgba(1, 47, 198, 0.75) 0%, rgba(2, 74, 89, 0) 45%),
+    radial-gradient(circle at var(--circle-two-x) var(--circle-two-y), rgba(0, 42, 179, 0.75) 0%, rgba(255, 255, 255, 0) 50%);
+  background-size: 16px 16px, 100% 100%, 100% 100%;
+  animation: radial-gradient-swap 8s ease-in-out infinite alternate;
+}
+
+@keyframes radial-gradient-swap {
+  from {
+    --circle-one-x: 20%;
+    --circle-one-y: 20%;
+    --circle-two-x: 80%;
+    --circle-two-y: 80%;
+  }
+  to {
+    --circle-one-x: 80%;
+    --circle-one-y: 80%;
+    --circle-two-x: 20%;
+    --circle-two-y: 20%;
+  }
+}
+
+.reveal-on-load {
+  animation: hero-heading-reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+  will-change: opacity, transform;
+}
+
+@keyframes hero-heading-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-load {
+    animation: none;
+  }
 }
 
 .glowing-dot {
@@ -185,6 +228,7 @@ h1{
   font-weight: bolder;
 }
 .servicetext{
+
    font-family: "DM Sans", sans-serif;
    font-weight: 200;
    font-size: 14px;
@@ -267,14 +311,52 @@ h1{
 .company{
     margin-top: 20px;
     overflow: hidden;
+    width: 100%;
 }
 
 .company-logos {
     display: flex;
-    gap: 40px;
     animation: company 10s linear infinite;
-    margin: 0 auto;
+    width: max-content;
+    will-change: transform;
+}
 
+.company-logo-group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 40px;
+  padding-right: 40px;
+}
+
+.company-logo-group img {
+  flex: 0 0 auto;
+}
+
+/* Reusable seamless marquee: render two identical groups inside the track. */
+.continuous-marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.continuous-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: continuous-marquee 10s linear infinite;
+  will-change: transform;
+}
+
+.continuous-marquee-group {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+@keyframes continuous-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes company{
@@ -282,7 +364,7 @@ h1{
         transform: translateX(0%);
     }
     100% {
-        transform: translateX(-100%);
+      transform: translateX(-50%);
     }
   
 }

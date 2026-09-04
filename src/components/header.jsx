@@ -72,6 +72,7 @@ import TheTimes from '../assets/TheTimes.png'
 import BBC from '../assets/BBC.jpg'
 import MotherDiary from '../assets/MotherDiary.jpg'
 import app from '../assets/app.jpg'
+import monument from '../assets/monuments.svg'
 
 
 function Header() {
@@ -105,21 +106,21 @@ function Header() {
     width: 'calc((100% - 12px) / 3)',
   };
   const companyLogos = [
-    { src: AirIndia, alt: 'Air India', width: '120px', height: '40px' },
-    { src: Airtel, alt: 'Airtel', width: '120px', height: '40px' },
+    { src: AirIndia, alt: 'Air India', width: '100px', height: '40px' },
+    { src: Airtel, alt: 'Airtel', width: '100px', height: '40px' },
     { src: asian, alt: 'Asian Paints', width: '80px', height: '40px' },
     { src: carrier, alt: 'Carrier', width: '80px', height: '40px' },
     { src: ICIC, alt: 'ICIC Bank', width: '110px', height: '30px' },
     { src: HDFC, alt: 'HDFC Bank', width: '150px', height: '30px' },
-    { src: hp, alt: 'HP', width: '120px', height: '40px' },
+    { src: hp, alt: 'HP', width: '100px', height: '40px' },
     { src: Kotak, alt: 'Kotak', width: '120px', height: '40px' },
     { src: LIC, alt: 'LIC', width: '120px', height: '40px' },
     { src: mahindra, alt: 'Mahindra', width: '80px', height: '40px' },
     { src: Samsung, alt: 'Samsung', width: '120px', height: '40px' },
     { src: Sony, alt: 'Sony', width: '80px', height: '40px' },
-    { src: standardchartered, alt: 'Standard Chartered', width: '180px', height: '40px' },
-    { src: TheTimes, alt: 'The Times of India', width: '120px', height: '40px' },
-    { src: BBC, alt: 'BBC', width: '200px', height: '40px' },
+    { src: standardchartered, alt: 'Standard Chartered', width: '100px', height: '40px' },
+    { src: TheTimes, alt: 'The Times of India', width: '100px', height: '40px' },
+    { src: BBC, alt: 'BBC', width: '150px', height: '40px' },
     { src: MotherDiary, alt: 'Mother Dairy', width: '80px', height: '40px' },
   ];
 
@@ -155,11 +156,11 @@ function Header() {
      <div>
       <div className="w-full animate-marqee border-b-2 border-blue-600">
         <div className="marqee-content">
-          <p className='font-semibold'>Important Update: Download the latest EbixCash Wallet &amp;
+          <p className='font-semibold text-[15px]'>Important Update: Download the latest EbixCash Wallet &amp;
             Payments App to use seamless &amp; secure UPI services.
             Update now for hassle-free payments. App available for Android &amp; iOS devices.
           </p>
-          <p className='font-semibold'>Important Update: Download the latest EbixCash Wallet &amp;
+          <p className='font-semibold text-[15px]'>Important Update: Download the latest EbixCash Wallet &amp;
             Payments App to use seamless &amp; secure UPI services.
             Update now for hassle-free payments. App available for Android &amp; iOS devices.
           </p>
@@ -168,6 +169,7 @@ function Header() {
       
       <div className="w-full h-140 md:h-170 flex justify-center" style={imageprop}>
         <div
+          className="animated-blue-circles"
           style={{
             position: 'absolute',
             top: 0,
@@ -175,33 +177,28 @@ function Header() {
             width: '100%',
             height: '100%',
             backgroundColor: 'rgba(6, 1, 78, 0.8)',
-            backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.24) 1px, transparent 1px), radial-gradient(circle at 20% 20%, rgba(1, 47, 198, 0.85) 0%, rgba(2, 74, 89, 0) 45%), radial-gradient(circle at 80% 80%, rgba(0, 42, 179, 0.85) 0%, rgba(255,255,255,0) 50%)`,
-            backgroundSize: '16px 16px, 100% 100%, 100% 100%',
-            backgroundPosition: 'center',
             boxShadow: 'inset 0 0 80px rgba(0, 213, 255, 0.2)',
             zIndex: 1,
             pointerEvents: 'none'
           }}
         ></div>
-        <video autoPlay muted loop className="absolute top-0 left-0 w-full h-full object-cover" style={{zIndex: 0, opacity: 0}}>
-          <source src={backgroundVideo} type="video/mp4" />
-        </video>
-        <nav className="w-full md:w-4xl relative h-15 md:h-20 flex gap-8 mt-0 md:mt-7 px-0 md:px-10  md:rounded-xl p-1 md:p-3 bg-white" style={{zIndex: 40}}>
-            <div className="logo flex">
-                  <img src={logo} alt="logo"  />
+    
+        <nav className="w-full md:w-5xl relative h-15 md:h-20 flex gap-8 mt-0 md:mt-7 px-0 md:px-10  md:rounded-xl p-1 md:p-3 bg-white flex  justify-between" style={{zIndex: 40}}>
+            <div className="logo flex mb-[5px]">
+                  <img src={logo} alt="logo" width={120}/>
             </div>
     
-            <div className="navbar-items hidden md:flex">
-              <ul className='flex gap-6'>
-                <li className="flex flex-col">Home<span className="hidden absolute w-[400px] h-[200px] rounded-2xl bg-white mt-10 left-0 z-20">Hi, John</span></li> 
-                <li>Discover</li>
-                <li>Company</li>
-                <li>Services</li>
+            <div className="navbar-items hidden md:flex flex justify-center items-center flex-start  w-[30rem] ">
+              <ul className='flex justify-content items-center gap-x-15 font-semibold ' >
+                <li className="bg-blue-900  rounded-2xl px-6 py-1 text-white  flex flex-col" style={{ backgroundImage: `linear-gradient(135deg, #0635e1 0%, #01287c 100%)`}}>Home<span className="hidden absolute w-[400px] h-[200px] rounded-2xl bg-white mt-10 left-0 z-20">Hi, John</span></li> 
+                <li className="bg-blue-900 rounded-2xl px-6 py-1 text-white  flex flex-col " style={{ backgroundImage: `linear-gradient(135deg, #0635e1 0%, #01287c 100%)`}}>Discover</li>
+                <li className="bg-blue-900 rounded-2xl px-6 py-1 text-white  flex flex-col " style={{ backgroundImage: `linear-gradient(135deg, #0635e1 0%, #01287c 100%)`}}>Company</li>
+                <li className="bg-blue-900 rounded-2xl px-6 py-1 text-white  flex flex-col " style={{ backgroundImage: `linear-gradient(135deg, #0635e1 0%, #01287c 100%)`}}>Services</li>
               </ul>
             </div>
 
             <div className="hidden md:flex">
-              <ul className='flex gap-4 navbar-user-items'>
+              <ul className='flex gap-4 navbar-user-items gap-x-6'>
                 <li><img src={user} alt="User" className="m-2" style={{width: '40px'}}/></li>
                 <li><img src={circle} alt="logo" className="m-2" style={{width: '40px'}}/></li>
               </ul>
@@ -213,7 +210,7 @@ function Header() {
         </nav>
 
         <div className="absolute top-30 md:top-40 text-center flex justify-center items-center flex-col" style={{zIndex: 10}}>
-          <div className="w-[250px] md:w-[300px] mb-5 rounded-full m-auto py-1 text-white font-medium text-[12px] md:text-sm" style={{border: '0.5px solid white'}}>
+          <div className="w-[250px] md:w-[300px] mb-5 rounded-full m-auto py-1 text-white  text-[12px] md:text-sm border-[0.2px] border-white" >
           <span 
                   className="glowing-dot" 
                   style={{
@@ -221,12 +218,12 @@ function Header() {
                     boxShadow: `0 0 10px #00D4FF, 0 0 20px #00D4FF`
                   }}
                 ></span>Enough for every happiness</div>
-          <h1 className='flex justify-center items-center w-[30rem] md:w-full mt-2 md:mt-0  text-[30px] md:text-5xl text-white text-wrap md:text-nowrap' style={{fontFamily: "Space Grotesk", fontWeight: `lighter` }}>India’s Largest End-to-End Financial Exchange</h1>
-          <p className="mt-2 md:mt-2 w-[30rem] md:w-full text-[11px] md:text-xl  text-white font-extralight text-wrap md:text-nowrap">Powering payments, travel, forex, remittance,
+          <h1 className='reveal-on-load flex justify-center items-center w-[30rem] md:w-full mt-2 md:mt-0  text-[30px] md:text-[46px] text-white text-wrap md:text-nowrap' style={{fontFamily: "Space Grotesk", fontWeight: `lighter` }}>India’s Largest End-to-End Financial Exchange</h1>
+          <p className="reveal-on-load mt-2 md:mt-1 w-[30rem] md:w-full text-[11px] md:text-xl  text-white font-extralight text-wrap md:text-nowrap">Powering payments, travel, forex, remittance,
              and financial technology through a vast<br></br> phygital network of 650,000+ outlets across India.
           </p>
 
-          <div className="flex gap-4 justify-center mt-6 md:mt-8 ">
+          <div className="reveal-on-load flex gap-4 justify-center mt-6 md:mt-6 ">
               <button className="tracking-wider border-b-2 border-white text-nowrap italic text-center rounded-4xl herobtn font-bold text-white w-40 md:w-48">
                 {btnitems}
               </button>
@@ -236,7 +233,7 @@ function Header() {
           <div>
           </div>
           
-          <div className="w-[24rem] md:w-full max-w-[1200px] h-[170px] rounded-2xl m-auto movingCards flex justify-center items-center gap-8 overflow-hidden mt-[10px]" style={{zIndex: 10}}>
+          <div className="reveal-on-load w-[24rem] md:w-full max-w-[1200px] h-[170px] rounded-2xl m-auto movingCards flex justify-center items-center gap-8 overflow-hidden mt-[15px]" style={{zIndex: 10}}>
              <div className="bg-blue-800  border-[0.1px] border-blue-400 rounded-xl  w-40 h-22 md:h-25  gradient-border px-4 flex-shrink-0 bg-contain bg-no-repeat bg-center" style={{backgroundImage: `url(${business})`}}><span className='cardtext'>FinTech</span></div>
              <div className="bg-blue-800  border-[0.1px] border-blue-400 rounded-xl  w-40 h-22 md:h-25  gradient-border px-4 flex-shrink-0 bg-contain bg-no-repeat bg-center" style={{backgroundImage: `url(${elearning})`}}><span className='cardtext'>E-Learning</span></div>
              <div className="bg-blue-800  border-[0.1px] border-blue-400 rounded-xl  w-40 h-22 md:h-25  gradient-border px-4 flex-shrink-0 bg-contain bg-no-repeat bg-center" style={{backgroundImage: `url(${travel})`}}><span className='cardtext'>Travel</span></div>
@@ -247,32 +244,27 @@ function Header() {
              <div className="bg-blue-800  border-[0.1px] border-blue-400 rounded-xl  w-40 h-22 md:h-25  gradient-border px-4 flex-shrink-0 bg-contain bg-no-repeat bg-center" style={{backgroundImage: `url(${telecom})`}}><span className='cardtext'>Telecom</span></div>
           </div>
           
-         <div className="mt-8 md:mt-7 text-center text-blue-50">We Strengthen India's Biggest Brands </div>
+         <div className="mt-8 md:mt-11 text-center text-white ">We Strengthen India's Biggest Brands </div>
         </div>
        
 
         
       </div>
 
-      <div className="w-full mt-5 h-10">
-        <div className="company-logos">
-          {companyLogos.map((logo, index) => (
-            <img
-              key={`${logo.alt}-${index}`}
-              src={logo.src}
-              alt={logo.alt}
-              loading="lazy"
-              style={{ width: logo.width, height: logo.height }}
-            />
-          ))}
-          {companyLogos.map((logo, index) => (
-            <img
-              key={`${logo.alt}-dup-${index}`}
-              src={logo.src}
-              alt={logo.alt}
-              loading="lazy"
-              style={{ width: logo.width, height: logo.height }}
-            />
+      <div className="company continuous-marquee w-full ">
+        <div className="company-logos continuous-marquee-track">
+          {[0, 1].map((group) => (
+            <div className="company-logo-group continuous-marquee-group" key={group} aria-hidden={group === 1}>
+              {companyLogos.map((logo, index) => (
+                <img
+                  key={`${group}-${logo.alt}-${index}`}
+                  src={logo.src}
+                  alt={group === 1 ? '' : logo.alt}
+                  loading="lazy"
+                  style={{ width: logo.width, height: logo.height }}
+                />
+              ))}
+            </div>
           ))}
         </div>
       </div>
@@ -302,7 +294,7 @@ function Header() {
 
       <div className="bg-gray-400 w-1/2 md:w-full mt-[-20px] md:mt-0 flex justify-center mx-auto ">
         <div className=" md:ml-10 md:mr-10 absolute flex flex-col md:flex-row justify-center items-center gap-1 md:gap-8 w-full max-w-[1400px]">
-          <div className="m-2 rounded-xl h-[18rem] md:w-[44%] md:min-w-[200px] bg-cover bg-center card-shine investors-shine" style={{borderBottom: `#10169f 5px solid`, backgroundImage: `linear-gradient(135deg, #193cb8 0%, #155dfc 100%)`}}>
+          <div className="m-2 rounded-xl h-[18rem] md:w-[44%] md:min-w-[200px] bg-cover bg-center card-shine investors-shine" style={{ backgroundImage: `linear-gradient(135deg, #0635e1 0%, #01287c 100%)`}}>
             <div className="float-right mt-15 mr-0 text-justify" style={{width: `160px`}}><img src={investors} /></div>
             <div className="p-6">
               <h2 className="pl-2 text-3xl text-white border-l-2" style={{fontFamily: "Italianno", cursive: 'true'}}>Investors</h2>
@@ -321,8 +313,8 @@ function Header() {
             </div>
           </div>
 
-          <div className="m-2 rounded-xl h-[18rem] md:w-[44%] md:min-w-[300px] card-shine consumers-shine" style={{ borderBottom: `#1e4a1d 5px solid`, backgroundImage: `linear-gradient(135deg, #1e4a1d 0%, #40ae39 100%)`}}>
-           <div className="float-right mt-14 mb-0 text-justify" style={{width: `150px`}}><img src={consumers} /></div>
+          <div className="m-2 rounded-xl h-[18rem] md:w-[44%] md:min-w-[300px] card-shine consumers-shine" style={{ backgroundImage: `linear-gradient(135deg, #057d03 0%, #0f560b 100%)`}}>
+           <div className=" float-right mt-14 mb-0 text-justify" style={{width: `150px`}}><img src={consumers} /></div>
             <div className="p-6">
               <h2 className="pl-2 text-3xl text-white border-l-2" style={{fontFamily: "Italianno", cursive: 'true'}}>Consumers</h2>
               <p className="mt-3 font-semibold text-left text-justify text-white servicetext" style={{fontSize: `14px`}}>Everything You Need. One Trusted Platform.
@@ -342,7 +334,7 @@ function Header() {
             <button className="float-right mt-[-16px] mr-7 rotate-180 "><img src={swipe} width="40px" height="40px" /></button>
           </div>
 
-          <div className="m-2 rounded-xl h-[18rem] md:w-[45%] md:min-w-[300px] card-shine business-shine" style={{ borderBottom: `oklch(51.8% 0.253 323.949) 5px solid`, backgroundImage: `linear-gradient(135deg, oklch(43.2% 0.232 292.759) 0%, oklch(55.8% 0.288 302.321) 100%)`}}>
+          <div className="m-2 rounded-xl h-[18rem] md:w-[45%] md:min-w-[300px] card-shine business-shine" style={{ backgroundImage: `linear-gradient(135deg, #5c007e 0%, #450655f8 100%)`}}>
             <div className="float-right mt-14 mb-0 text-justify" style={{width: `130px`}}><img src={businessimg} /></div>
             <div className="p-6">
               <h2 className="pl-2 text-3xl text-white border-l-2" style={{fontFamily: "Italianno", cursive: 'true'}}>Business</h2>
@@ -369,6 +361,7 @@ function Header() {
 
 
     <section className="w-full h-[70rem] md:h-[40rem] relative mt-[60rem] md:mt-[400px] flex flex-col">
+     
     <div className="absolute inset-0 bg-cover bg-no-repeat" style={{ backgroundImage: `url(${About})` }}>
     <div className="flex flex-col-reverse md:flex-row">   
       <div className="w-[25rem] md:w-[30rem] mt-24 mx-auto "> 
@@ -407,6 +400,8 @@ function Header() {
     </ul>
     </div>
     </div>
+
+
     
     
 
@@ -424,13 +419,12 @@ function Header() {
 
     <section className="mt-20" >
       <div className="border flex flex-col md:flex-row absolute w-full h-[34rem] md:h-[20rem] bg-blue-800 gap-10" style={{
-            backgroundImage: `linear-gradient(135deg, rgba(10, 34, 114, 0.3), rgba(30, 64, 175, 0.82)), url(${app})`,
+            backgroundImage: `linear-gradient(90deg, #02239b 0%, #01287c 100%))`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             backgroundBlendMode: 'overlay',
             minHeight: '20rem',
-            
           }} >
         <div className="relative w-[25rem] md:w-[70rem] ">
   
@@ -627,7 +621,7 @@ function Header() {
 
     <footer className="w-full h-[87rem] md:h-[42rem] absolute mt-480 bg-blue-800 bg-gradient-to-t from-blue-600 via-blue-700 to-blue-800" 
           style={{
-            backgroundImage: `linear-gradient(135deg, rgba(10, 34, 114, 0.3), rgba(30, 64, 175, 0.4)), url(${contact})`,
+            backgroundImage: `linear-gradient(95deg, #0635e1 0%, #01287c 100%)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
