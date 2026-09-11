@@ -9,12 +9,14 @@
 
 
 
-html, body {
+html,
+body,
+#root {
   font-family: "Source Sans 3", sans-serif;
   font-optical-sizing: auto;
   font-weight: 237;
   font-style: normal;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .animate-marqee{
@@ -59,6 +61,69 @@ h1{
     -webkit-text-fill-color: transparent;
     line-height: 1.5;
     font-weight: 900;
+}
+
+.contact-card-globe {
+  position: absolute !important;
+  inset: auto !important;
+  left: 50% !important;
+  top: calc(100% - 210px) !important;
+  width: 420px !important;
+  max-width: 420px !important;
+  height: 420px !important;
+  max-height: 420px !important;
+  aspect-ratio: 1 / 1;
+  transform: translateX(-50%) !important;
+  opacity: 1;
+  z-index: 3;
+  overflow: visible;
+}
+
+.contact-card-globe canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  border-radius: 50%;
+}
+
+@media (max-width: 767px) {
+  .contact-card-globe {
+    top: calc(100% - (min(420px, 100vw) / 2)) !important;
+    width: min(420px, 100vw) !important;
+    max-width: 100vw !important;
+    height: min(420px, 100vw) !important;
+    max-height: 100vw !important;
+  }
+}
+
+.train-animation {
+  animation: train-across-footer 14s linear infinite;
+  will-change: transform;
+}
+
+@keyframes train-across-footer {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(calc(-100% - 100vw));
+  }
+}
+
+.globe-country-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  background: rgba(3, 55, 146, 0.75);
+  border-radius: 999px;
+  padding: 2px 18px;
+  z-index: 8;
+  pointer-events: none;
+  box-shadow: 0 0 4px rgba(255,255,255,0.9);
 }
 
 @property --circle-one-x {
@@ -155,11 +220,11 @@ h1{
       font-style: normal;
       font-weight: 100;
       font-size: 25px;
-      background: linear-gradient(25deg, #002396, rgb(19, 78, 255));
-      border: 1px solid rgb(67, 109, 249);
+      background: linear-gradient(25deg, #0540ff, rgb(0, 64, 255));
+      border: 1px solid rgb(110, 144, 255);
 }
 .herobtn:hover{
-    background: linear-gradient(90deg, #1807ff, rgb(1, 26, 100));
+    background: linear-gradient(90deg, #1807ff, rgb(2, 37, 142));
 }
 .movingCards {
     position: relative;
@@ -188,20 +253,18 @@ h1{
     background: linear-gradient(270deg, rgba(8, 0, 113, 1), rgba(8, 0, 113, 0));
 }
 
-.movingCards > div {
-    animation: cards 6s linear infinite;
-    padding: 0;
-    margin: 0;
-    display: inline-block;
+.movingCards-track {
+  display: flex;
+  width: max-content;
+  animation: continuous-marquee 10s linear infinite;
+  will-change: transform;
 }
 
-@keyframes cards{
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+.movingCards-group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 2rem;
+  padding-right: 2rem;
 }
 
 
@@ -230,8 +293,8 @@ h1{
 .servicetext{
 
    font-family: "DM Sans", sans-serif;
-   font-weight: 200;
-   font-size: 14px;
+   font-weight: 300;
+   font-size: 10px;
 }
 .serviceheading{
   font-family: "DM Sans", sans-serif;
@@ -246,16 +309,15 @@ h1{
 }
 
 .service{
-  color:rgb(0, 36, 143);
-  font-family: "DM Sans", sans-serif; 
+  color:rgb(0, 27, 108);
   margin-bottom: 20px;
-  color:#0b00ac;
+  font-family: "DM Sans", sans-serif;
   font-weight: 500;
 }
 .everywhere{
     font-family: "Italianno", cursive;
     font-style: normal;
-    color:#0b00ac;
+   color:rgb(1, 29, 110);
     font-size:larger;
     font-weight: bold;
 }
@@ -373,7 +435,14 @@ h1{
 .card-shine {
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: scale(1);
+}
+
+.card-shine:hover {
+  transform: scale(1.03);
+  z-index: 2;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
 }
 
 .card-shine::before {
@@ -401,6 +470,16 @@ h1{
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .card-shine {
+    transition: none;
+  }
+
+  .card-shine:hover {
+    transform: none;
+  }
+}
+
 /* Blue shine for investors card */
 .investors-shine::before {
   background: linear-gradient(90deg, transparent, rgba(81, 162, 255, 0.7), transparent);
@@ -419,16 +498,16 @@ h1{
 .abouttext{
    font-family: "Space Grotesk", sans-serif; 
    font-size: 50px; 
-   font-weight: 100;
+   font-weight: 50;
    letter-spacing: -0.07cm;
    
 }
 .aboutdescription{
-  color: white;
+  font-family: "DM Sans", sans-serif;
   display: flex;
   flex-direction: column;
   text-align: justify;
-  margin-top: 20px;
+  margin-top: 10px;
   gap: 5px;
 
 }
@@ -438,4 +517,8 @@ h1{
 }
 .card > span > br > p{
   font-family:'Courier New', Courier, monospace;
+}
+.list > li{
+  border-bottom: 0.1px solid rgb(93, 169, 255);
+  padding: 1px;
 }

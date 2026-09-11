@@ -66,27 +66,30 @@ export const testimonialData = [
 
 function Testimonial() {
   return (
-    <div className="relative w-[25rem] md:w-[80rem] flex justify-center mx-auto marquee">
+    <div className="relative  w-full w-[25rem] md:w-[80rem] flex justify-center mx-auto marquee">
       <div className="absolute inset-y-0 left-0 w-4 bg-gradient-to-r from-white to-transparent pointer-events-none z-20" />
       <div className="absolute inset-y-0 right-0 w-4 bg-gradient-to-l from-white to-transparent pointer-events-none z-20" />
       <div className="relative flex flex-row testimonial-track h-[30rem] gap-10 justify-center items-center mt-[-40px] ml-2 ">
    
       {testimonialData.map((data) => (
       
-        <div key={data.id} className=" flex flex-col justify-center items-center w-[25rem] h-[17rem] rounded-2xl bg-gradient-to-t from-blue-800 via-blue-700 to-blue-900">
+        <div key={data.id} className=" flex flex-col justify-center items-center w-[25rem] h-[14rem] rounded-2xl bg-gradient-to-t from-blue-900 via-blue-700 to-blue-900">
 
-            <div className="absolute rounded-full bg-white w-[110px] h-[110px] mt-[-270px]"><img className="rounded-full w-[90px] h-[90px] mx-auto mt-3 object-cover" src={data.image} alt="customer"/></div>
-            <RiDoubleQuotesL width={100} className='bg-blue-100 rounded-full w-10 h-10 p-2 ml-[-260px] mt-[-150px] text-blue-900 absolute'/>
-            <div className="flex flex-col  text-center mt-5"> 
-            <p className="text-[16px] font-bold mt-[60px] text-white">{data.name}</p>
+            <div className="absolute rounded-full bg-white w-[100px] h-[100px] mt-[-250px]"><img className="rounded-full w-[80px] h-[80px] mx-auto mt-3 object-cover" src={data.image} alt="customer"/></div>
+            <RiDoubleQuotesL width={100} className='bg-blue-100 rounded-full w-10 h-10 p-2 ml-[-250px] mt-[-120px] text-blue-900 absolute'/>
+            <div className="flex flex-col  text-center mt-10"> 
+            <p className="text-[16px] font-bold text-white">{data.name}</p>
              
-            <p className="text-[14px] font-bold text-white"> {data.designation}</p>
-            <p className="text-[14px]  font-bold text-white">{data.company}</p>
-            <p className="text-white text-[15px] ml-6 mr-6 mt-4 font-sans">{data.review}</p>
+            <div className=" mx-auto text-white gap-1 text-[11px]" style={{fontFamily: "DM Sans"}}> 
+            <p> {data.designation}</p>
+            <p>{data.company}</p> 
             </div>
-           
 
-            <div className="mt-[-15px]"><img src={review} width="90px"/></div>
+           
+            <p className="italic font-semibold text-white text-[13px] ml-6 mr-6 mt-2" >{data.review}</p>
+            </div>
+             
+            <div className="mt-[-20px]"><img src={review} width="80px"/></div>
         </div>
       ))}
     </div>
